@@ -91,7 +91,7 @@ def saveImg(urls,path): #PIG 填入图片路径
 if __name__ == '__main__':
 	word = '曾沛慈' #PIG 输入关键字
 	pages = 3 #PIG 输入页数
-	path = 'D:/photo/'+word
+	path = 'D:/photo/'+word+'/'
 	imgData = getImgData(word,pages)
 	imgUrl = getImgUrl(imgData)
 	imgUrl = parseImgUrl(imgUrl)
