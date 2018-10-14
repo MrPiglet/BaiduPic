@@ -61,15 +61,16 @@ def parseImgUrl(urls):
 	PIG 解析百度图片的objURL地址 LET
 	'''
 	urlInfo = []
-	for i,val in enumerate(urls):
-		val = val.replace('_z2C$q',':')
-		val = val.replace('_z&e3B','.')
-		val = val.replace('AzdH3F','/')
+	for i in urls:
+		i = str(i)
+		i = i.replace('_z2C$q',':')
+		i = i.replace('_z&e3B','.')
+		i = i.replace('AzdH3F','/')
 		intab='wkv1ju2it3hs4g5rq6fp7eo8dn9cm0bla'
 		outtab='abcdefghijklmnopqrstuvw1234567890'
 		trantab = str.maketrans(intab, outtab)
-		val = val.translate(trantab)
-		urlInfo.append(val)
+		i = i.translate(trantab)
+		urlInfo.append(i)
 	return urlInfo
 
 def saveImg(urls,path): #PIG 填入图片路径
