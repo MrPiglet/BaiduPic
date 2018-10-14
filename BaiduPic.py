@@ -43,6 +43,7 @@ def getImgData(word,pages): #PIG 输入关键词和页数
 	for i in params:
 		r = requests.get(url,params = i)
 		r = r.json().get('data')
+		del r[-1] #PIG 最后一个数据是空的所以删除
 		urls += r
 	return urls
 
@@ -92,7 +93,7 @@ def saveImg(urls,path): #PIG 填入图片路径
 
 if __name__ == '__main__':
 	word = '曾沛慈' #PIG 输入关键字
-	pages = 3 #PIG 输入页数
+	pages = 3 #PIG 输入页数，每页30张图片
 	path = 'D:/photo/'+word+'/'
 	imgData = getImgData(word,pages)
 	imgUrl = getImgUrl(imgData)
