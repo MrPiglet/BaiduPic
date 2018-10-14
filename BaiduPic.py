@@ -81,15 +81,18 @@ def saveImg(urls,path): #PIG 填入图片路径
 	myHeaders = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36'}
 	if not os.path.exists(path):
 		os.makedirs(path)
-	try:
-		for i,val in enumerate(urls):
-			print('正在下载第{}张图片'.format(i))
+	for i,val in enumerate(urls):
+		print('正在下载第{}张图片:'.format(i),end = '')
+		try:
 			pic = requests.get(val,headers = myHeaders,timeout = 3).content
+		except:
+			print('失败')
+		else:
 			with open(path + str(i) +'.jpg','wb') as f:
 				f.write(pic)
-		print("图片下载完成")
-	except:
-		print('图片下载失败')
+			print('成功')
+	print("图片下载完成")
+
 
 if __name__ == '__main__':
 	word = '曾沛慈' #PIG 输入关键字
