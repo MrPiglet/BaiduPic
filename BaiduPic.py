@@ -66,10 +66,10 @@ def parseImgUrl(urls):
 		i = i.replace('_z&e3B','.')
 		i = i.replace('AzdH3F','/')
 		intab='wkv1ju2it3hs4g5rq6fp7eo8dn9cm0bla'
-	    outtab='abcdefghijklmnopqrstuvw1234567890'
-	    trantab = str.maketrans(intab, outtab)
-	    i = i.translate(maketrans)
-	    urlInfo.append(i)
+		outtab='abcdefghijklmnopqrstuvw1234567890'
+		trantab = str.maketrans(intab, outtab)
+		i = i.translate(maketrans)
+		urlInfo.append(i)
 	return urlInfo
 
 def saveImg(urls,path): #PIG 填入图片路径
