@@ -83,8 +83,8 @@ def saveImg(urls,path): #PIG 填入图片路径
 		os.makedirs(path)
 	try:
 		for i,val in enumerate(urls):
-			pic = requests.get(val,headers = myHeaders,timeout = 3).content
 			print('正在下载第{}张图片'.format(i))
+			pic = requests.get(val,headers = myHeaders,timeout = 3).content
 			with open(path + str(i) +'.jpg','wb') as f:
 				f.write(pic)
 		print("图片下载完成")
