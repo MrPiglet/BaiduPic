@@ -76,6 +76,7 @@ def saveImg(urls,path): #PIG 填入图片路径
 	'''
 	PIG 存储图片 LET
 	'''
+	myHeaders = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36'}
 	if not os.path.exists(path):
 		os.makedirs(path)
 	try:
